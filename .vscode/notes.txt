@@ -1,0 +1,5 @@
+- We can add the New Post or Updated post at the top of the database to not sort the Post again and again
+- There is a bug when I add myself as a friend and remove myself from the friend list
+- I shouldn't see an option of adding myself as a friend...which is just odd
+- Add Chat Feature
+- Add Notification Feature
