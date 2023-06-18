@@ -4,7 +4,7 @@
 
 //For add/remove friends...we will have id and friendid in the params...now we get the user->friends list..now we check for the friend in the friend list ... if present we update the list with filtering out the friend's id (also friend's->freinds list and filter out current user)....else add the friend's id
 
-import User from "../models/User.js";
+import User from "../models/user.js";
 
 /* READ */
 export const getUser = async (req, res) => {

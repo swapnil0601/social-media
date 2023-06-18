@@ -2,8 +2,8 @@
 //Get feed posts will collect all the posts from a user's friend list
 //Get User Post will add a user filter from the total list of posts
 //Post has a memeber Liked which is a map...on likeing...we find the user in the map whether he/she has liked:true or  false...we just complement it
-import Post from "../models/Post.js";
-import User from "../models/User.js";
+import Post from "../models/post.js";
+import User from "../models/user.js";
 
 /* CREATE */
 export const createPost = async (req, res) => {
