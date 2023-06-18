@@ -2,6 +2,10 @@
 
 This is a social media web application built with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create and edit their profiles, make posts, and interact with other users by commenting and liking posts.
 
+## Usage
+
+To access the SimplySocial application, visit the following URL: [https://simplysocial1.netlify.app/](https://simplysocial1.netlify.app/)
+
 ## Features
 
 - User authentication with JWT tokens
