@@ -53,9 +53,6 @@ app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
 app.use("/users", userRoutes);
 
-import User from "./models/User.js";
-import Post from "./models/Post.js";
-import { users, posts } from "./data/index.js";
 /* MONGOOSE SETUP */
 import mongoose from "mongoose";
 const PORT = process.env.PORT || 6001;

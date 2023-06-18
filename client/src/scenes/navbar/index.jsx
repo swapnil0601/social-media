@@ -20,11 +20,27 @@ import {
   Menu,
   Close,
 } from "@mui/icons-material";
+import { keyframes } from "@emotion/react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
-
+const slideIn = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+`;
 const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
@@ -127,16 +143,21 @@ const Navbar = () => {
           bottom="0"
           height="100%"
           zIndex="10"
-          maxWidth="500px"
-          minWidth="300px"
-          backgroundColor={background}
+          maxWidth="400px"
+          minWidth="200px"
+          backgroundColor={dark}
+          sx={{
+            animation: `${
+              isMobileMenuToggled ? slideIn : slideOut
+            } 0.5s ease-in-out`,
+          }}
         >
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
             >
-              <Close />
+              <Close sx={{ color: background }} />
             </IconButton>
           </Box>
 
@@ -153,14 +174,14 @@ const Navbar = () => {
               sx={{ fontSize: "25px" }}
             >
               {theme.palette.mode === "dark" ? (
-                <DarkMode sx={{ fontSize: "25px" }} />
+                <DarkMode sx={{ color: background, fontSize: "25px" }} />
               ) : (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+                <LightMode sx={{ color: background, fontSize: "25px" }} />
               )}
             </IconButton>
-            <Message sx={{ fontSize: "25px" }} />
-            <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
+            <Message sx={{ color: background, fontSize: "25px" }} />
+            <Notifications sx={{ color: background, fontSize: "25px" }} />
+            <Help sx={{ color: background, fontSize: "25px" }} />
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
